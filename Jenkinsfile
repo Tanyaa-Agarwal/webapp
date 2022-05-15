@@ -18,5 +18,10 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                sh '/home/ubuntu/deployment.sh'
+            }
+        }
     }
 }
