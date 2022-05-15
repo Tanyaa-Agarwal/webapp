@@ -20,6 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'ls'
                 sh '/home/ubuntu/deployment.sh'
             }
         }
