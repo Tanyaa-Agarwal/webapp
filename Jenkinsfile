@@ -12,17 +12,17 @@ pipeline {
             steps {
                 sh 'mvn test' 
             }
-            // post {
-            //     always {
-            //         junit 'target/surefire-reports/*.xml' 
-            //     }
-            // }
-        }
-        stage('Deploy') {
-            steps {
-                // sh 'ls /home/ubuntu'
-                sh '/home/ubuntu/deployment.sh'
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml' 
+                }
             }
         }
+        // stage('Deploy') {
+        //     steps {
+        //         // sh 'ls /home/ubuntu'
+        //         sh '/home/ubuntu/deployment.sh'
+        //     }
+        // }
     }
 }
